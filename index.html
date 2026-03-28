@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Dhruv Soni — Frontend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<div id="spb"></div>
+
+<div id="loader">
+  <div class="lo-name">Dhruv Soni</div>
+  <div class="lo-bar"><div class="lo-fill"></div></div>
+  <div class="lo-sub">Loading portfolio...</div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-logo">Dhruv Soni</div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#resume" class="nav-resume-btn">Resume ↓</a>
+  </div>
+</nav>
+
+<section id="home">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-grid-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-pill"><span class="hero-dot"></span>Open to opportunities</div>
+    <h1 class="hero-name">
+      <span class="hero-name-main">Dhruv Soni</span>
+    </h1>
+    <div class="hero-typing-wrap">
+      <span id="typing-out"></span><span class="hero-typing-cursor"></span>
+    </div>
+    <p class="hero-tagline">I build modern, interactive, and scalable web experiences — where design meets engineering.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-glow" onclick="smoothTo('projects')">View Projects →</a>
+      <a href="#contact" class="btn btn-outline" onclick="smoothTo('contact')">Contact Me</a>
+    </div>
+  </div>
+  <div class="scroll-ind"><span>scroll</span><div class="scroll-line-v"></div></div>
+</section>
+
+<section id="about">
+  <div class="about-wrap">
+    <div class="fi">
+      <div class="about-img-box glass">
+        <div class="about-emoji">👨‍💻</div>
+      </div>
+    </div>
+    <div class="fi d2">
+      <div class="sec-label">About Me</div>
+      <h2 class="sec-title">Crafting Pixels into <span class="grad">Experiences</span></h2>
+      <p class="about-bio">
+        I'm a passionate <strong>Frontend Developer</strong> with a love for building clean, performant, and beautiful web applications. Currently diving deep into the <strong>MERN Stack</strong> and exploring the frontier of AI-integrated web experiences.
+      </p>
+      <p class="about-bio">
+        I believe great software is a blend of solid engineering and thoughtful design. Every line of code I write is aimed at delivering real value — fast, accessible, and delightful to use.
+      </p>
+      <div class="about-chips">
+        <span class="chip hl">React.js</span>
+        <span class="chip hl">Tailwind CSS</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">MongoDB</span>
+        <span class="chip">UI/UX Design</span>
+        <span class="chip">REST APIs</span>
+      </div>
+      <div class="about-nums">
+        <div class="num-card"><div class="num-val">2+</div><div class="num-lbl">Years Coding</div></div>
+        <div class="num-card"><div class="num-val">15+</div><div class="num-lbl">Projects</div></div>
+        <div class="num-card"><div class="num-val">5+</div><div class="num-lbl">Certs</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-head fi">
+    <div class="sec-label">Technical Skills</div>
+    <h2 class="sec-title">My <span class="grad">Arsenal</span></h2>
+    <p class="sec-desc">Tools and technologies I use to bring ideas to life — from pixel-perfect UI to scalable backends.</p>
+  </div>
+  <div class="fi d1">
+    <div class="skills-learning-badge">
+      <span class="badge-dot"></span>
+      Currently Learning: MERN Stack &amp; AI Integration
+    </div>
+  </div>
+
+  <div class="skills-group fi d2">
+    <div class="skills-group-title">Frontend</div>
+    <div class="skills-grid" id="sg-frontend"></div>
+  </div>
+  <div class="skills-group fi d3">
+    <div class="skills-group-title">Tools &amp; Platforms</div>
+    <div class="skills-grid" id="sg-tools"></div>
+  </div>
+  <div class="skills-group fi d4">
+    <div class="skills-group-title">Concepts</div>
+    <div class="skills-grid" id="sg-concepts"></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-head fi">
+    <div class="sec-label">Featured Work</div>
+    <h2 class="sec-title">Selected <span class="grad2">Projects</span></h2>
+    <p class="sec-desc">A curated selection of things I've built — click "Details" for the full story.</p>
+  </div>
+  <div class="projects-grid" id="projects-grid"></div>
+</section>
+
+<div id="modal-overlay">
+  <div class="modal">
+    <button class="modal-close-btn" id="modal-close">✕</button>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<section id="certifications">
+  <div class="sec-head fi">
+    <div class="sec-label">Credentials</div>
+    <h2 class="sec-title">Certifications <span class="grad">&amp; Courses</span></h2>
+    <p class="sec-desc">Verified achievements and ongoing learning milestones.</p>
+  </div>
+  <div class="certs-grid fi d2" id="certs-grid"></div>
+</section>
+
+<section id="resume">
+  <div class="sec-head sec-head-center fi">
+    <div class="sec-label">Resume</div>
+    <h2 class="sec-title">My <span class="grad">Resume</span></h2>
+  </div>
+  <div class="resume-box glass fi d2">
+    <span class="resume-icon">📄</span>
+    <div class="resume-title">Dhruv Soni — Frontend Developer</div>
+    <p class="resume-desc">
+      My resume covers my skills in React, JavaScript, Tailwind CSS, and my ongoing journey into the MERN stack. Includes project highlights, certifications, and education background.
+    </p>
+    <div class="resume-btns">
+      <a href="assets/resume.pdf" download="Dhruv_Soni_Resume.pdf" class="res-btn primary">⬇ Download Resume</a>
+      <a href="assets/resume.pdf" target="_blank" rel="noopener" class="res-btn secondary">👁 View Resume</a>
+    </div>
+    <p class="res-box-footer">
+      * Replace assets/resume.pdf with your actual resume file path
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sec-head sec-head-center fi">
+    <div class="sec-label">Get In Touch</div>
+    <h2 class="sec-title">Let's <span class="grad">Connect</span></h2>
+    <p class="sec-desc">Have a project, opportunity, or just want to say hi? My inbox is always open.</p>
+  </div>
+  <div class="contact-wrap contact-container">
+    <div class="fi">
+      <p class="contact-info-desc">
+        I'm currently open to freelance projects, internships, and full-time roles. Let's build something great together!
+      </p>
+      <div class="c-links">
+        <a href="mailto:sonidhruv465@gmail.com" class="c-link">
+          <div class="c-link-icon">📧</div>
+          <div class="c-link-text"><strong>Email</strong><span>sonidhruv465@gmail.com</span></div>
+        </a>
+        <a href="https://github.com/dhruv-dynamics" target="_blank" rel="noopener" class="c-link">
+          <div class="c-link-icon">🐙</div>
+          <div class="c-link-text"><strong>GitHub</strong><span>github.com/Dhruv_Soni</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/dhruvsoni03/" target="_blank" rel="noopener" class="c-link">
+          <div class="c-link-icon">💼</div>
+          <div class="c-link-text"><strong>LinkedIn</strong><span>linkedin.com/in/Dhruv-Soni</span></div>
+        </a>
+      </div>
+    </div>
+    <div class="fi d2">
+      <form id="contact-form" onsubmit="submitContact(event)">
+        <div class="form-group">
+          <input class="f-input" type="text" id="f-name" placeholder="Name" required/>
+          <label class="f-label" for="f-name">Your Name</label>
+        </div>
+        <div class="form-group">
+          <input class="f-input" type="email" id="f-email" placeholder="Email" required/>
+          <label class="f-label" for="f-email">Email Address</label>
+        </div>
+        <div class="form-group">
+          <input class="f-input" type="text" id="f-sub" placeholder="Subject"/>
+          <label class="f-label" for="f-sub">Subject</label>
+        </div>
+        <div class="form-group">
+          <textarea class="f-input" id="f-msg" rows="5" placeholder="Message" required></textarea>
+          <label class="f-label" for="f-msg">Your Message</label>
+        </div>
+        <button type="submit" class="submit-btn" id="submit-btn">
+          <span class="sbtn-text">Send Message ✨</span>
+          <div class="spin"></div>
+        </button>
+        <div class="success-banner" id="success-banner">
+          ✅ Message sent! I'll get back to you within 24 hours.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-copy">Designed &amp; Built by <strong>Dhruv Soni</strong> &copy; 2025</div>
+  <div class="socials">
+    <a href="https://github.com/dhruv-dynamics" target="_blank" rel="noopener" class="soc" title="GitHub">🐙</a>
+    <a href="https://www.linkedin.com/in/dhruvsoni03/" target="_blank" rel="noopener" class="soc" title="LinkedIn">💼</a>
+    <a href="https://twitter.com/dhruvs" target="_blank" rel="noopener" class="soc" title="Twitter">🐦</a>
+    <a href="mailto:sonidhruv465@gmail.com" class="soc" title="Email">📧</a>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
