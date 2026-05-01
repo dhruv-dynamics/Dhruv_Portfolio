@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Message Sent | Dhruv Soni</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      flex-direction: column;
+      background-color: var(--bg);
+    }
+
+    .success-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(10, 5, 5, 0.1);
+      padding: 40px 30px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      max-width: 400px;
+    }
+
+    .success-box h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .success-box p {
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="success-box">
+    <h1>✅ Message Sent!</h1>
+    <p>Thank you for reaching out. I have received your message and will get back to you shortly.</p>
+    <a href="/" class="back-btn">Return to Portfolio</a>
+  </div>
+</body>
+
+</html>

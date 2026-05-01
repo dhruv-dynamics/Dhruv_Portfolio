@@ -192,30 +192,28 @@
       </div>
     </div>
     <div class="fi d2">
-      <form id="contact-form" onsubmit="submitContact(event)">
+      <form id="contact-form" name="contact" method="POST" data-netlify="true" action="/success.html">
+        <input type="hidden" name="form-name" value="contact" />
         <div class="form-group">
-          <input class="f-input" type="text" id="f-name" placeholder="Name" required/>
+          <input class="f-input" type="text" id="f-name" name="name" placeholder="Name" required/>
           <label class="f-label" for="f-name">Your Name</label>
         </div>
         <div class="form-group">
-          <input class="f-input" type="email" id="f-email" placeholder="Email" required/>
+          <input class="f-input" type="email" id="f-email" name="email" placeholder="Email" required/>
           <label class="f-label" for="f-email">Email Address</label>
         </div>
         <div class="form-group">
-          <input class="f-input" type="text" id="f-sub" placeholder="Subject"/>
+          <input class="f-input" type="text" id="f-sub" name="subject" placeholder="Subject"/>
           <label class="f-label" for="f-sub">Subject</label>
         </div>
         <div class="form-group">
-          <textarea class="f-input" id="f-msg" rows="5" placeholder="Message" required></textarea>
+          <textarea class="f-input" id="f-msg" name="message" rows="5" placeholder="Message" required></textarea>
           <label class="f-label" for="f-msg">Your Message</label>
         </div>
         <button type="submit" class="submit-btn" id="submit-btn">
           <span class="sbtn-text">Send Message ✨</span>
           <div class="spin"></div>
         </button>
-        <div class="success-banner" id="success-banner">
-          ✅ Message sent! I'll get back to you within 24 hours.
-        </div>
       </form>
     </div>
   </div>
@@ -230,6 +228,7 @@
     <a href="mailto:sonidhruv465@gmail.com" class="soc" title="Email">📧</a>
   </div>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
